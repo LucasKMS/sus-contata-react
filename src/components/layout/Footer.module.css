@@ -1,0 +1,55 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+    background: var(--blue-bg);
+    margin-top: 60px;
+    border-radius: 12px;
+  }
+  
+  #menu-footer {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+  }
+  
+  #menu-footer li,
+  #menu-footer a {
+    text-decoration: none;
+  }
+  
+  #contatos ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    margin-right: 16px;
+  }
+  
+  #contatos ul li,
+  #contatos ul a {
+    text-decoration: none;
+    margin: 4px;
+  }
+  
+  footer p,
+  .card a {
+    color: var(--white-bg);
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  #apoiadores {
+    height: 100px;
+  }
+  .apoiadores {
+    max-height: fit-content;
+    min-height: fit-content;
+    padding: 20px;
+  }
+  
+  #contatos img {
+    max-height: 30px;
+  }
+  
