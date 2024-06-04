@@ -1,4 +1,83 @@
-.imagem {
+.navbar {
     display: flex;
-    width: 20%;
+    height: 120px;
+    margin-bottom: 1rem;
+    width: 100vw; 
+    flex-wrap: wrap; 
+}
+
+.custom-nav {
+    
+}
+
+.gradient-menu {
+    display: flex;
+    margin: auto;
+    height: 120px;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 12px;
+    background: linear-gradient(270deg, #36b5cf 0%, #7ec462 100%); 
+    flex-grow: 1; 
+    flex-direction: row; 
+    padding: 1rem; 
+    margin-right: 1rem; 
+}
+
+.logoMenu {
+    
+}
+
+.list-unstyled {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-bottom: 0; 
+}
+
+.list-item {
+    margin-right: 1rem; 
+}
+
+.imagem {
+    max-height: 96px;
+    margin: auto;
+    margin-top: 8px;
+}
+
+.nav-link,
+.nav-item {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--white-bg);
+    min-width: fit-content;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    align-items: center;
+    position: sticky;
+    margin-bottom: 30px;
+}
+
+header figure {
+    width: 120px;
+    margin-top: 24px;
+}
+
+@media screen and (max-width: 550px) {
+    figure {
+        display: flex;
+        flex-shrink: 1;
+    }
+    .navbar {
+        margin-bottom: 16px;
+    }
 }

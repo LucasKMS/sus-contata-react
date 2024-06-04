@@ -1,26 +1,29 @@
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './NavBar.module.css';
-import logoSvg from "../../assets/logo_sus_contata.png";
+import logoSvg from '../../assets/logo_sus_contata.png'; 
 
 function NavBar() {
     return (
-        <nav className="navbar custom-nav mb-4 vw-100 d-flex flex-wrap">
-            <div id="gradient-menu" className="gradient-menu d-flex flex-grow-1 flex-row p-3 me-4">
+        <nav className={`${styles.navbar} ${styles['custom-nav']}`}>
+            <div className={styles.logoMenu}>
                 <Link to='/'>
-                    <img src={logoSvg} alt="SUS-Contata_logo" className={styles.imagem}/>
+                    <img src={logoSvg} alt="SUS-Contata_logo" className={styles.imagem} />
                 </Link>
-                <ul className="d-flex list-unstyled mb-0">
-                    <li className="me-3">
-                        <Link to='/'>Home</Link>
+            </div>
+            <div id="gradient-menu" className={styles['gradient-menu']}>
+                <ul className={styles['list-unstyled']}>
+                    <li className={styles['list-item']}>
+                        <Link to='/' className={styles['nav-link']}>Home</Link>
                     </li>
-                    <li className="me-3">
-                        <Link to='/agendamentos'>Agendamentos</Link>
+                    <li className={styles['list-item']}>
+                        <Link to='/agendamentos' className={styles['nav-link']}>Agendamentos</Link>
                     </li>
-                    <li className="me-3">
-                        <Link to='/meuperfil'>Meu Perfil</Link>
+                    <li className={styles['list-item']}>
+                        <Link to='/meuperfil' className={styles['nav-link']}>Meu Perfil</Link>
                     </li>
-                    <li className="me-3">
-                        <Link to='/login'>Login/Logoff</Link>
+                    <li className={styles['list-item']}>
+                        <Link to='/login' className={styles['nav-link']}>Login/Logoff</Link>
                     </li>  
                 </ul> 
             </div>
