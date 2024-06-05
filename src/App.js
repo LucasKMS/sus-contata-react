@@ -8,13 +8,14 @@ import Home from './components/Home';
 import Agendamentos from './components/Agendamentos';
 import MeuPerfil from './components/MeuPerfil';
 import Login from './components/Login';
+ 
 
 function App() {
   return (
     <Router>
 
     <NavBar />
-      <div>
+      <div className='container'>
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/agendamentos' element={<Agendamentos />}></Route>

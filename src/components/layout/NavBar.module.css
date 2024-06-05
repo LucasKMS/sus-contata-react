@@ -1,3 +1,15 @@
+:root {
+    --white-bg: #F2F2F2;
+    --blue-std: #25C7D9;
+    --green-dark: #3255e1;
+    --green-mid: #6580eb;
+    --green-light: #9badf6;
+    --text-black: #0D0D0D;
+    --blue-bg: #5269c7;
+   
+    font-family: "rawline", helvetica, arial, sans-serif;
+  }
+
 .navbar {
     display: flex;
     height: 120px;
@@ -17,7 +29,7 @@
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     border-radius: 12px;
-    background: linear-gradient(270deg, #36b5cf 0%, #7ec462 100%); 
+    background: var(--blue-bg); 
     flex-grow: 1; 
     flex-direction: row; 
     padding: 1rem; 
