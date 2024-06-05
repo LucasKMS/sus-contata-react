@@ -3,6 +3,7 @@ import './App.css';
 
 import NavBar from './components/layout/NavBar';
 import Footer from './components/layout/Footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Home from './components/Home';
 import Agendamentos from './components/Agendamentos';

@@ -1,0 +1,93 @@
+:root {
+    --white-bg: #F2F2F2;
+    --blue-std: #25C7D9;
+    --green-dark: #87BF60;
+    --green-mid: #AED98F;
+    --green-light: #BDD9A9;
+    --text-black: #0D0D0D;
+  
+    font-family: "rawline", helvetica, arial, sans-serif;
+  }
+  
+  main {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .logo img {
+    max-height: 200px;
+
+  }
+  
+  .botao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 10px;
+  }
+  
+  .botao label {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5px;
+  }
+  
+  .botao button {
+    margin-top: 18px;
+    height: 40px;
+  }
+  
+  .infoLogin {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .infoLogin input {
+    height: 30px;
+    border-radius: 20px;
+    margin-top: 5px;
+    border: var(--text-black) solid 1px;
+    width: 240px;
+  }
+  
+  .radioLogin {
+    display: flex;
+    flex-direction: row;
+    margin-top: 16px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .usuario {
+    display: inline;
+  }
+  
+  .conecta {
+    height: 30px;
+    border-radius: 16px;
+    background-color: var(--blue-std);
+    color: var(--white-bg);
+    font-weight: bold;
+    font-size: medium;
+    width: 200px;
+    align-content: center;
+  }
+  
+  .login_logoff {
+    background-color: var(--blue-std);
+    border-radius: 16px;
+    font-weight: bold;
+    color: var(--white-bg);
+    width: 150px;
+    padding: 2px;
+    border: 1px solid var(--text-black);
+  }
+  
+  
