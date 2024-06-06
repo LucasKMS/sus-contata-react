@@ -1,0 +1,44 @@
+/* eslint-disable no-undef */
+use('SUS_Contata')
+
+const paciente = {
+    "cpf": "12345678910",
+    "nomeCompleto": "Gabriel Fortes Ashikaga",
+    "email": "gabriel.ashikaga@fatec.sp.gov.br",
+    "dataNascimento": "04/01/1989",
+    "telefones": {
+        "telefone1": "11987654321",
+        "telefone2": "11978654321"
+    },
+    "endereco": {
+        "cep": "12345678",
+        "logradouro": "Av. das Pitangueiras",
+        "numero": "456",
+        "bairro": "Vila Nova",
+        "complemento": "Ap. 13",
+        "cidade": "Votorantim"
+    },
+    "contatosAdicionais": {
+        "contato1": {
+            "parentesco": "Filho",
+            "nomeCompleto": "Yuri dos Reis Ashikaga",
+            "email": "yuri.ashikaga@hotmail.com",
+            "telefones": {
+                "telefone1": "11987654654",
+                "telefone2": "11987654123"
+            }
+        },        
+        "contato2": {
+            "parentesco": "Filha",
+            "nomeCompleto": "Aurora dos Reis Ashikaga",
+            "email": "aurora.ashikaga@hotmail.com",
+            "telefones": {
+                "telefone1": "11987654645",
+                "telefone2": "11987654132"
+            }
+        }
+    },
+    "encaixe": true
+}
+
+db.pacientes.insertOne(paciente)
