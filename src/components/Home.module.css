@@ -1,4 +1,4 @@
-   :root {
+:root {
     --white-bg: #F2F2F2;
     --blue-std: #25C7D9;
     --green-dark: #87BF60;
@@ -218,6 +218,16 @@ p {
     scroll-snap-align: start;
 }
 
+.CarouselItem {
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.CarouselItem img {
+    border-radius: 16px;
+    overflow: visible;
+}
+
 .select_box {
     position: relative;
     display: inline-block;
@@ -250,4 +260,11 @@ p {
     opacity: 0.65;
 }
 
+.carousel-item img {
+    border-radius: 16px;
+    transition: border-radius 0.5s ease-in-out;
+}
 
+.carousel-item {
+    border-radius: 16px;
+  }

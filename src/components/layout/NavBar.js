@@ -23,6 +23,9 @@ function NavBar() {
                         <Link to='/meuperfil' className={styles['nav-link']}>Meu Perfil</Link>
                     </li>
                     <li className={styles['list-item']}>
+                        <Link to='/cadastro' className={styles['nav-link']}>Cadastro</Link>
+                    </li>
+                    <li className={styles['list-item']}>
                         <Link to='/login' className={styles['nav-link']}>Login/Logoff</Link>
                     </li>  
                 </ul> 

@@ -9,6 +9,7 @@ import Home from './components/Home';
 import Agendamentos from './components/Agendamentos';
 import MeuPerfil from './components/MeuPerfil';
 import Login from './components/Login';
+import CadastroUbs from './components/CadastroUbs';
  
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path='/' element={<Home />}></Route>
           <Route path='/agendamentos' element={<Agendamentos />}></Route>
           <Route path='/meuperfil' element={<MeuPerfil />}></Route>
+          <Route path='/cadastro' element={<CadastroUbs />}></Route>
           <Route path='/login' element={<Login />}></Route>
         </Routes>
       </div>

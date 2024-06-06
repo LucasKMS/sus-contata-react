@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+<div align="center">
+    
+![banner-sus contata](https://github.com/ashkgabriel/SUS-Contata-Angular-v1/assets/59896608/26e76962-7288-4778-a243-79c1dedfdf9a)
+</div>
+<br id="topo">
+<p align="center">
+    <a href="#sobre">Sobre</a>  |  
+    <a href="#backlogs">Backlogs & User Stories</a>  |  
+    <a href="#prototipo">Protótipo</a>  |  
+    <a href="#documentacao">Documentação</a>  |  
+    <a href="#tecnologias">Tecnologias</a>  |  
+    <a href="#equipe">Equipe</a>
+</p>
+   
+<span id="sobre">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## :bookmark_tabs: Sobre o projeto
+O **SUS Contata** foi desenvolvido como uma solução para melhorar a **comunicação** entre o sistema público de saúde e seus usuários, possibilitando ao **usuário (paciente)** checar seus agendamentos em postos de saúde e receber lembretes evitando que o cidadão perca uma consulta ou procedimento por algum lapso de memória além de otimizar a gestão de horários dos médicos e servidores que irão atender à população.
 
-## Available Scripts
+**Funcionários administrativos** das unidades de saúde serão capazes de realizar os agendamentos conforme a demanda enviada através da secretaria de saúde, cadastrar novos cidadãos ao escopo da unidade e gerir os agendamentos.
 
-In the project directory, you can run:
+> Este projeto utilizou-se de metodologia ágil **SCRUM** a fim de otimizar as entregas, alterações e cooperação dos indivíduos envolvidos.
 
-### `npm start`
+:pushpin: Status do Projeto: **Em desenvolvimento** :tired_face: :computer: 
+### :crossed_flags: Entregas de Sprints
+Cada entrega realizada será visualizada através de uma **tag** em cada repositório (web e microsserviços), além da criação de uma branch neste repositório com um relatório de tudo o que foi desenvolvido por sprint.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## :factory: Backlogs & User Stories
+    
+> Em desenvolvimento
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+→ [Voltar ao topo](#topo)
 
-### `npm test`
+<span id="prototipo">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## :art: Protótipos
+Para idealização do layout foram desenvolvidos protótipos de baixo e alto nível, utilizando-se das ferramentas **Balsamiq** e **Figma** respectivamente.
 
-### `npm run build`
+[Acesse o protótipo de baixo nível](./sus-contata-wireframe)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Acesse o protótipo de alto nível](./sus-contata-figma)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<span id="documentacao">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## :page_with_curl: Documentação
+    
+> 🔗 **Links gerais** <br>
+> - Documentação do software: [clique aqui para acessar](./Projeto-Interdisciplinar---SUS-Contata.pdf)
+> - Links para os repositórios criados:
+>    - **Frontend:** [acessar sus-contata-react](https://github.com/ashkgabriel/sus-contata-react)
+>    - **Microsserviços (backend):**
+>      > _Implementando_
 
-### `npm run eject`
+→ [Voltar ao topo](#topo)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<span id="tecnologias">
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🛠️ Tecnologias
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+As seguintes ferramentas, linguagens, bibliotecas e tecnologias foram usadas na construção do projeto:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<img src="https://img.shields.io/badge/Figma-CED4DA?style=for-the-badge&logo=figma&logoColor=DC143C" alt="Figma" /> 
+<img src="https://img.shields.io/badge/HTML5-CED4DA?style=for-the-badge&logo=html5&logoColor=E34F26" alt="HTML" /> 
+<img src="https://img.shields.io/badge/CSS3-CED4DA?style=for-the-badge&logo=css3&logoColor=1572B6" alt="CSS" /> 	
+<img src="https://img.shields.io/badge/Javascript-CED4DA?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="Javascript" /> 
+<img src="https://img.shields.io/badge/React-CED4DA?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" /> 
+<img src="https://img.shields.io/badge/Node.js-CED4DA?style=for-the-badge&logo=nodedotjs&logoColor=339933" alt="Node" />  
+<img src="https://img.shields.io/badge/MongoDB-CED4DA?style=for-the-badge&logo=mongodb&logoColor=4EA94B" alt="MongoDB" />
+<img src="https://img.shields.io/badge/Postman-CED4DA?style=for-the-badge&logo=postman&logoColor=FF6C37" alt="Postman" /><br>
+<img src="https://img.shields.io/badge/VS_Code-CED4DA?style=for-the-badge&logo=visual%20studio%20code&logoColor=0078D4" alt="VS Code" /> 
+<img src="https://img.shields.io/badge/Discord-CED4DA?style=for-the-badge&logo=discord&logoColor=7289DA" alt="Discord" /> 
+<img src="https://img.shields.io/badge/Microsoft Word-CED4DA?style=for-the-badge&logo=microsoftword&logoColor=2B579A" alt="Microsoft Word" /> 
+<img src="https://img.shields.io/badge/Microsoft Teams-CED4DA?style=for-the-badge&logo=microsoftteams&logoColor=6264A7" alt="Microsoft Word" /> 
+<img src="https://img.shields.io/badge/GitHub-CED4DA?style=for-the-badge&logo=github&logoColor=20232A" alt="GitHub" /> 
+    
+→ [Voltar ao topo](#topo)
 
-## Learn More
+<span id="equipe">
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## :busts_in_silhouette: Equipe
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+| Nome                                  |                                                                                                                                                      LinkedIn & GitHub                                                                                                                                                      |
+| :------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Gabriel Fortes Ashikaga           |          [![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabriel-fortes-ashikaga/) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/ashkgabriel)          |
+| Guilherme do Carmo Marengo |      [![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/marengo/) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/guimarengo)      |
+| Lucas Kauã Martins Sampaio       |      [![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/lucas-kau%C3%A3/) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/LucasKMS)      |
+| Rodrigo Antônio Raimundo                      |         [![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/rodrigo-raimundo-2946ba30/) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/RodrigoRay)          |
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+→ [Voltar ao topo](#topo)

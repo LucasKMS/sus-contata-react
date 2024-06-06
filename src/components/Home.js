@@ -15,6 +15,7 @@ import fotoUBS11 from '../assets/ENDEREÇOS E FOTOS DAS UBS DE VOTORANTIM/11 - u
 import fotoUBS12 from '../assets/ENDEREÇOS E FOTOS DAS UBS DE VOTORANTIM/12 - ESF GREEN VALLEY.jpg';
 import fotoUBS13 from '../assets/ENDEREÇOS E FOTOS DAS UBS DE VOTORANTIM/13 - UNIDADE DE SAÚDE DA FAMILIA JARDIM TATIANA.jpg';
 import fotoUBS14 from '../assets/ENDEREÇOS E FOTOS DAS UBS DE VOTORANTIM/14 - ESF PROMORAR.jpg';
+import { useNavigate } from 'react-router-dom'
 
 import styles from './Home.module.css';
 
@@ -33,9 +34,9 @@ const UBSCarousel = ({ ubsList, selectedUBS, handleSelectChange }) => (
   <div>
     <Carousel activeIndex={ubsList.findIndex(ubs => ubs.value === selectedUBS)} controls={false} indicators={false} className={styles.Carousel}>
       {ubsList.map((ubs) => (
-        <Carousel.Item key={ubs.value}>
+        <Carousel.Item key={ubs.value} className={styles.CarouselItem}>
           <img
-            className="d-block w-100"
+            className="d-block w-100 border-2"
             src={ubs.imgSrc}
             alt={ubs.label}
           />
@@ -180,6 +181,11 @@ function Home() {
      }
   ];
 
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+      navigate('/login')}
+
   return (
     <>
       <div id="login" className={styles.login}>
@@ -210,7 +216,7 @@ function Home() {
           </div>
 
           <div id="botao" className={styles.botao}>
-            <button id="conecte-sus">Conecte SUS</button>
+            <button id="conecte-sus" onClick={handleClick}>Conecte SUS</button>
           </div>
 
           <div className={styles.select_box}>

@@ -58,11 +58,24 @@
   
   .radioLogin {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-top: 16px;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     flex-wrap: wrap;
+    box-sizing: border-box;
+  }
+
+  .radioLogin div label{
+    margin-bottom: 8px;
+  }
+
+  .radioLogin div input[type="radio"]{
+    cursor: pointer;
+  }
+
+  .radioLogin div {
+    gap: 8px;
   }
   
   .usuario {

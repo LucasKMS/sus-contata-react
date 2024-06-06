@@ -23,10 +23,20 @@ function Login() {
         <button className={styles.conecta}>Conectar</button>
 
         <div className={styles.radioLogin}>
-            <label for="cidadao">Login Cidadão</label>
-            <input type="radio" name="optLogin" className= {styles.cidadao} value="cidadao" checked/>
-            <label for="administrativo">Login Administrativo</label>
-            <input type="radio" name="optLogin" className= {styles.administrativo} value="administrativo"/>
+            <div className='d-flex'>
+                <input type="radio" name="optLogin" className= {styles.cidadao} value="cidadao" />
+                <label for="cidadao">Login Cidadão</label>
+            </div>
+            
+            <div className='d-flex'>
+                <input type="radio" name="optLogin" className= {styles.administrativo} value="administrativo"/>
+                <label for="administrativo">Login Administrativo</label>
+            </div>
+
+            <div className='d-flex'>
+                <input type="radio" name="optLogin" className= {styles.medico} value="medico"/>
+                <label for="administratmedicoivo">Login Médico</label>
+            </div>
         </div>
       </div>
     </>
