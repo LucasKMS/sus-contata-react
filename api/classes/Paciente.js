@@ -93,7 +93,7 @@ class Paciente {
         return paciente; // Retorna o paciente salvo
     }
 
-    async getAll() {
+    static async getAll() {
         try {
             const pacientes = await PacienteModel.find();
             return pacientes.map(paciente => new Paciente(paciente));
@@ -103,7 +103,7 @@ class Paciente {
     }
 
 
-    static async update(updates) {
+    async update(updates) {
         const allowedUpdates = ['nomeCompleto', 'dataNascimento', 'endereco', 'email', 'telefones', 'contatosAdicionais', 'encaixe'];
         const filteredUpdates = Object.keys(updates).reduce((acc, key) => {
             if (allowedUpdates.includes(key)) {
@@ -112,7 +112,7 @@ class Paciente {
             return acc;
         }, {});
 
-        if (Object.keys(filteredUpdates).length === 0) {
+        if (Object.keys(filteredUpdates).length === 0 && !allowedUpdates.some(key => updates.hasOwnProperty(key))) {
             throw new Error('Nenhuma atualização válida foi fornecida!');
         }
 
@@ -131,7 +131,7 @@ class Paciente {
         }
     }
 
-    static async delete() {
+    async delete() {
         const paciente = await PacienteModel.findOneAndDelete({ cpf: this._cpf });
         if (!paciente) {
             throw new Error('Paciente não encontrado!');

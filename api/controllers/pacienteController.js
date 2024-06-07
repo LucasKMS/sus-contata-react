@@ -52,7 +52,7 @@ const updatePacienteByCpf = async (req, res) => {
         return res.status(400).send({ error: 'Dados de atualização inválidos!' });
     }
 
-    const allowedUpdates = ['cpf', 'nomeCompleto', 'dataNascimento', 'endereco', 'email', 'telefones', 'contatosAdicionais', 'encaixe'];
+    const allowedUpdates = ['nomeCompleto', 'dataNascimento', 'endereco', 'email', 'telefones', 'contatosAdicionais', 'encaixe'];
     const isValidOperation = Object.keys(updates).every((update) => allowedUpdates.includes(update));
 
     if (!isValidOperation) {
@@ -65,20 +65,7 @@ const updatePacienteByCpf = async (req, res) => {
             return res.status(404).send({ error: 'Paciente não encontrado!' });
         }
 
-        // Atualizar telefones se estiverem presentes no JSON de atualização
-        if (updates.telefones) {
-            paciente.telefones = updates.telefones;
-        }
-
-        // Atualizar contatos adicionais se estiverem presentes no JSON de atualização
-        if (updates.contatosAdicionais) {
-            paciente.contatosAdicionais = updates.contatosAdicionais;
-        }
-
-        // Atualizar outros campos diretamente
-        Object.assign(paciente, updates);
-
-        const pacienteAtualizado = await Paciente.update(updates); // Corrigido
+        const pacienteAtualizado = await paciente.update(updates); // Chama o método de instância update
         res.status(200).send(pacienteAtualizado);
     } catch (error) {
         res.status(400).send(error.message);
@@ -92,7 +79,7 @@ const deletePacienteByCpf = async (req, res) => {
         if (!paciente) {
             return res.status(404).send();
         }
-        const pacienteDeletado = await Paciente.delete();
+        const pacienteDeletado = await paciente.delete();
         res.status(200).send(pacienteDeletado);
     } catch (error) {
         res.status(500).send(error.message);
