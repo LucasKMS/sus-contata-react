@@ -9,7 +9,7 @@ function CadastroUbs() {
                 <Row>
                     <Col md={6}>
                         <h4 className="text-primary mt-3">Cadastro de Unidades Básicas de Saúde</h4>
-                        <Container>
+                        
                             <Form id="formUnidades" method="post" className="m-auto" style={{ maxWidth: '600px' }}>
                                 <hr className="my-4" />
                                 <Form.Group className="mb-3" controlId="nome_unidade">
@@ -90,8 +90,9 @@ function CadastroUbs() {
                                     <Button className="btn btn-primary" name="salvar" type="submit">💾Salvar</Button>
                                 </Form.Group>
                             </Form>
-                        </Container>
+                        
                     </Col>
+            
                     <Col md={6}>
                         <h4 className="text-primary mt-3">Unidades Cadastradas</h4>
                         <hr className="my-4" />

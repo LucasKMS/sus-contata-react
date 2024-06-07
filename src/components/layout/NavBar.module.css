@@ -18,6 +18,10 @@
     flex-wrap: wrap; 
 }
 
+.navbar Link{
+    font-size: 64px;
+}
+
 .custom-nav {
     
 }

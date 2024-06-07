@@ -1,0 +1,29 @@
+.fieldset {
+    width: 600px;
+  }
+  
+  .fieldset2 {
+    width: 1200px;
+  }
+  
+  @media screen and (max-width: 1250px) {
+    .fieldset2 {
+      width: 600px;
+      flex-shrink: 1;
+    }
+    .fieldset {
+      align-items: center;
+      margin: auto;
+    }
+  
+    form {
+      margin-top: auto;
+    }
+  }
+  
+  @media screen and (max-width: 615px) {
+    form {
+      margin-top: 180px;
+    }
+  }
+  
