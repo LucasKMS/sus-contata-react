@@ -1,24 +1,19 @@
-// Teste da API Rest de prestadores
+// Teste da API Rest de pacientes
 
 @baseURL = http://localhost:3000/api/pacientes
 
 ###
-# GET - Lista todos os prestadores
+# GET - Lista todos os pacientes
 GET {{baseURL}}/?limit=10&skip=0
 Content-Type: application/json
 
 ###
-# GET - Lista os prestadores por ID
-GET {{baseURL}}/id/6661db505103c71acf5d35fe
+# GET - Lista os pacientes por CPF
+GET {{baseURL}}/cpf/12345678910
 Content-Type: application/json
 
 ###
-# GET - Lista os prestadores por CPF
-GET {{baseURL}}/cpf/37550850895
-Content-Type: application/json
-
-###
-# POST - Insere um novo prestador
+# POST - Insere um novo paciente
 POST {{baseURL}}
 Content-Type: application/json
 
@@ -63,27 +58,50 @@ Content-Type: application/json
 }
 
 ###
-# PUT - Atualiza um prestador
+# PUT - Atualiza um paciente
 PUT  {{baseURL}}/37550850895
 Content-Type: application/json
 
 {
-  "_cpf": "37550850895",
-  "_nomeCompleto": "Gabriel Fortes Ashikagaa",
-  "_dataNascimento": "1989-04-01T03:00:00.000Z",
-  "_endereco": {
-    "cep": "12345678",
-    "logradouro": "Av. das Pitangueiras",
-    "numero": "456",
-    "bairro": "Vila Nova",
-    "complemento": "Ap. 13",
-    "cidade": "Votorantim",
-    "_id": "6661eb4541ad7b278d522078"
-  },
-  "_contatosAdicionais": {}
+    "nomeCompleto": "Gabriel Fortes Ashikaga",
+    "email": "gabriel.ashikaga@fatec.sp.gov.br",
+    "dataNascimento": "04/01/1989",
+    "telefones": {
+        "telefone1": "11987654321",
+        "telefone2": "11978654321"
+    },
+    "endereco": {
+        "cep": "12345678",
+        "logradouro": "Av. das Pitangueiras",
+        "numero": "456",
+        "bairro": "Vila Nova",
+        "complemento": "Ap. 13",
+        "cidade": "Votorantim"
+    },
+    "contatosAdicionais": {
+        "contato1": {
+            "parentesco": "Filho",
+            "nomeCompleto": "Yuri dos Reis Ashikaga",
+            "email": "yuri.ashikaga@hotmail.com",
+            "telefones": {
+                "telefone1": "11987654654",
+                "telefone2": "11987654123"
+            }
+        },
+        "contato2": {
+            "parentesco": "Filha",
+            "nomeCompleto": "Aurora dos Reis Ashikaga",
+            "email": "aurora.ashikaga@hotmail.com",
+            "telefones": {
+                "telefone1": "11987654645",
+                "telefone2": "11987654132"
+            }
+        }
+    },
+    "encaixe": true
 }
 
 ###
-# PUT - Insere um novo prestador
-DELETE  {{baseURL}}/37550850895
+# DELETE - Deleta um paciente
+DELETE  {{baseURL}}/12345678910
 Content-Type: application/json
