@@ -15,8 +15,7 @@ import Cadastro from './components/Cadastro';
 function App() {
   return (
     <Router>
-
-    <NavBar />
+      <NavBar />
       <div className='container'>
         <Routes>
           <Route path='/' element={<Home />}></Route>
