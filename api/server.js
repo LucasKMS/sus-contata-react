@@ -1,7 +1,12 @@
+// server.js
+
 const { config } = require("dotenv");
 const express = require('express');
 const mongoose = require('mongoose');
-const router = require("./routes/pacienteRoutes"); // CommonJS
+const pacienteRoutes = require("./routes/pacienteRoutes");
+const agendamentoRoutes = require("./routes/agendamentoRoutes");
+const unidadeRoutes = require("./routes/unidadeRoutes");
+const administrativoRoutes = require("./routes/administrativoRoutes");
 
 config();
 
@@ -25,7 +30,10 @@ mongoose.connection.on('error', (err) => {
 });
 
 // Definindo as rotas
-app.use('/api', router);
+app.use('/api', pacienteRoutes);
+app.use('/api', agendamentoRoutes);
+app.use('/api', unidadeRoutes);
+app.use('/api', administrativoRoutes);
 
 // Iniciando o servidor
 app.listen(PORT, () => {

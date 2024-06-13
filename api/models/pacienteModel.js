@@ -22,8 +22,8 @@ const ContatoAdicionalSchema = new Schema({
     parentesco: { type: String },
     nomeCompleto: { type: String },
     email: { type: String },
-    telefones: { type: [TelefoneSchema], _id: false },
-});
+    telefones: { type: [TelefoneSchema], _id: false }
+}, { _id: false }); // Definido como subdocumento, não ter _id próprio
 
 // Definindo o esquema para o paciente
 const PacienteSchema = new Schema({
@@ -32,14 +32,22 @@ const PacienteSchema = new Schema({
     dataNascimento: { type: Date, required: true },
     endereco: { type: EnderecoSchema, required: true },
     email: { type: String },
-    telefones: { type: TelefoneSchema },
+    telefones: { type: TelefoneSchema, _id: false },
     contatosAdicionais: {
-        contato1: { type: ContatoAdicionalSchema },
-        contato2: { type: ContatoAdicionalSchema }
+        contato1: { type: ContatoAdicionalSchema, _id: false },
+        contato2: { type: ContatoAdicionalSchema, _id: false }
     },
-    encaixe: { type: Boolean }
-});
+    encaixe: { type: Boolean },
+    tipoUsuario: {
+        type: String,
+        enum: ['adm', 'paciente', 'medico'],
+        required: true,
+        default: 'paciente'
+    }
+}, { timestamps: true }); // Adiciona campos createdAt e updatedAt
 
+// Criando o modelo Paciente a partir do esquema PacienteSchema
 const PacienteModel = mongoose.model('Paciente', PacienteSchema);
 
+// Exportando o modelo Paciente
 module.exports = { PacienteModel };

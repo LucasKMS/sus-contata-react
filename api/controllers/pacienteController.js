@@ -1,88 +1,83 @@
 const Paciente = require('../classes/Paciente');
 
+// Função para criar um paciente
 const createPaciente = async (req, res) => {
     try {
-        const { cpf, nomeCompleto, dataNascimento, endereco } = req.body;
-        const paciente = new Paciente({ cpf, nomeCompleto, dataNascimento, endereco });
-        await paciente.save();
-        res.status(201).send(paciente);
+        const paciente = new Paciente(req.body);
+        const savedPaciente = await paciente.save();
+        res.status(201).json(savedPaciente);
     } catch (error) {
-        res.status(400).send(error.message);
+        res.status(500).json({ message: 'Erro ao registrar o paciente', error: error.message });
     }
 };
 
+// Função para obter todos os pacientes
 const getAllPacientes = async (req, res) => {
     try {
         const pacientes = await Paciente.getAll();
-        res.status(200).send(pacientes);
+        res.status(200).json(pacientes);
     } catch (error) {
-        res.status(500).send(error.message);
+        res.status(500).json({ message: 'Erro ao obter a listagem dos pacientes', error: error.message });
     }
 };
 
-const getPacienteByCpf = async (req, res) => {
-    try {
-        const paciente = await Paciente.findByCpf(req.params.cpf);
-        if (!paciente) {
-            return res.status(404).send();
-        }
-        res.status(200).send(paciente);
-    } catch (error) {
-        res.status(500).send(error.message);
-    }
-};
-
+// Função para obter um paciente por ID
 const getPacienteById = async (req, res) => {
+    const { id } = req.params;
     try {
-        const paciente = await Paciente.findById(req.params.id);
+        const paciente = await Paciente.findById(id);
         if (!paciente) {
-            return res.status(404).send();
+            return res.status(404).json({ message: 'Paciente não encontrado' });
         }
-        res.status(200).send(paciente);
+        res.status(200).json(paciente);
     } catch (error) {
-        res.status(500).send(error.message);
+        res.status(500).json({ message: 'Erro ao obter o paciente', error: error.message });
     }
 };
 
-const updatePacienteByCpf = async (req, res) => {
-    const updates = req.body;
-
-    // Verifica se o objeto 'updates' é nulo ou indefinido
-    if (!updates || typeof updates !== 'object') {
-        return res.status(400).send({ error: 'Dados de atualização inválidos!' });
-    }
-
-    const allowedUpdates = ['nomeCompleto', 'dataNascimento', 'endereco', 'email', 'telefones', 'contatosAdicionais', 'encaixe'];
-    const isValidOperation = Object.keys(updates).every((update) => allowedUpdates.includes(update));
-
-    if (!isValidOperation) {
-        return res.status(400).send({ error: 'Atualizações inválidas!' });
-    }
-
+// Função para obter um paciente por CPF
+const getPacienteByCPF = async (req, res) => {
+    const { cpf } = req.params;
     try {
-        const paciente = await Paciente.findByCpf(req.params.cpf);
+        const paciente = await Paciente.findByCpf(cpf);
         if (!paciente) {
-            return res.status(404).send({ error: 'Paciente não encontrado!' });
+            return res.status(404).json({ message: 'Paciente não encontrado' });
         }
-
-        const pacienteAtualizado = await paciente.update(updates); // Chama o método de instância update
-        res.status(200).send(pacienteAtualizado);
+        res.status(200).json(paciente);
     } catch (error) {
-        res.status(400).send(error.message);
+        res.status(500).json({ message: 'Erro ao obter o paciente', error: error.message });
     }
 };
 
-
-const deletePacienteByCpf = async (req, res) => {
+// Função para atualizar um paciente por ID
+const updatePaciente = async (req, res) => {
+    const { cpf } = req.params;
     try {
-        const paciente = await Paciente.findByCpf(req.params.cpf);
+        const paciente = await Paciente.findByCpf(cpf);
         if (!paciente) {
-            return res.status(404).send();
+            return res.status(404).json({ message: 'Paciente não encontrado para atualização' });
         }
-        const pacienteDeletado = await paciente.delete();
-        res.status(200).send(pacienteDeletado);
+
+        const updatedPaciente = await paciente.update(req.body);
+        res.status(200).json(updatedPaciente);
     } catch (error) {
-        res.status(500).send(error.message);
+        res.status(500).json({ message: 'Erro ao atualizar o paciente', error: error.message });
+    }
+};
+
+// Função para deletar um paciente por ID
+const deletePaciente = async (req, res) => {
+    const { cpf } = req.params;
+    try {
+        const paciente = await Paciente.findByCpf(cpf);
+        if (!paciente) {
+            return res.status(404).json({ message: 'Paciente não encontrado para exclusão' });
+        }
+
+        await paciente.delete();
+        res.status(200).json({ message: 'Paciente excluído com sucesso' });
+    } catch (error) {
+        res.status(500).json({ message: 'Erro ao excluir o paciente', error: error.message });
     }
 };
 
@@ -90,7 +85,7 @@ module.exports = {
     createPaciente,
     getAllPacientes,
     getPacienteById,
-    getPacienteByCpf,
-    updatePacienteByCpf,
-    deletePacienteByCpf
+    updatePaciente,
+    deletePaciente,
+    getPacienteByCPF
 };

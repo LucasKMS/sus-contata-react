@@ -1,7 +1,8 @@
-const { PacienteModel } = require('../models/pacienteModel');
+const { AgendamentoModel } = require('../models/agendamentoModel'); // Adicionei ponto e vírgula aqui
+const { PacienteModel } = require('../models/PacienteModel')
 
 class Paciente {
-    constructor({ cpf, nomeCompleto, dataNascimento, endereco, email, telefones, contatosAdicionais, encaixe }) {
+    constructor({ cpf, nomeCompleto, dataNascimento, endereco, email, telefones, contatosAdicionais, encaixe, tipoUsuario }) {
         this._cpf = cpf;
         this._nomeCompleto = nomeCompleto;
         this._dataNascimento = dataNascimento;
@@ -10,72 +11,10 @@ class Paciente {
         this._telefones = telefones;
         this._contatosAdicionais = contatosAdicionais;
         this._encaixe = encaixe;
+        this._tipoUsuario = tipoUsuario;  // Adicionado o campo tipoUsuario
     }
 
-    // Getters e Setters
-    get cpf() {
-        return this._cpf;
-    }
-
-    set cpf(value) {
-        this._cpf = value;
-    }
-
-    get nomeCompleto() {
-        return this._nomeCompleto;
-    }
-
-    set nomeCompleto(value) {
-        this._nomeCompleto = value;
-    }
-
-    get dataNascimento() {
-        return this._dataNascimento;
-    }
-
-    set dataNascimento(value) {
-        this._dataNascimento = value;
-    }
-
-    get endereco() {
-        return this._endereco;
-    }
-
-    set endereco(value) {
-        this._endereco = value;
-    }
-
-    get email() {
-        return this._email;
-    }
-
-    set email(value) {
-        this._email = value;
-    }
-
-    get telefones() {
-        return this._telefones;
-    }
-
-    set telefones(value) {
-        this._telefones = value;
-    }
-
-    get contatosAdicionais() {
-        return this._contatosAdicionais;
-    }
-
-    set contatosAdicionais(value) {
-        this._contatosAdicionais = value;
-    }
-
-    get encaixe() {
-        return this._encaixe;
-    }
-
-    set encaixe(value) {
-        this._encaixe = value;
-    }
+    
 
     // Método para salvar o paciente no banco de dados
     async save() {
@@ -87,7 +26,8 @@ class Paciente {
             email: this._email,
             telefones: this._telefones,
             contatosAdicionais: this._contatosAdicionais,
-            encaixe: this._encaixe
+            encaixe: this._encaixe,
+            tipoUsuario: this._tipoUsuario  // Adicionado o campo tipoUsuario
         });
         await paciente.save();
         return paciente; // Retorna o paciente salvo
@@ -101,7 +41,6 @@ class Paciente {
             throw new Error('Erro ao buscar todos os pacientes: ' + error.message);
         }
     }
-
 
     async update(updates) {
         const allowedUpdates = ['nomeCompleto', 'dataNascimento', 'endereco', 'email', 'telefones', 'contatosAdicionais', 'encaixe'];
@@ -147,7 +86,7 @@ class Paciente {
             }
             return null;
         } catch (error) {
-            throw new Error('Erro ao buscar paciente por ID');
+            throw new Error('Erro ao buscar paciente por ID: ' + error.message);
         }
     }
 
@@ -159,7 +98,49 @@ class Paciente {
             }
             return null;
         } catch (error) {
-            throw new Error('Erro ao buscar paciente por CPF');
+            throw new Error('Erro ao buscar paciente por CPF: ' + error.message);
+        }
+    }
+
+    // Métodos de agendamento
+    async consultarAgendamentos() {
+        try {
+            const agendamentos = await AgendamentoModel.find({ pacienteCpf: this._cpf });
+            return agendamentos;
+        } catch (error) {
+            throw new Error('Erro ao consultar agendamentos: ' + error.message);
+        }
+    }
+
+    async cancelarAgendamento(agendamentoId) {
+        try {
+            const agendamento = await AgendamentoModel.findOneAndUpdate(
+                { _id: agendamentoId, pacienteCpf: this._cpf },
+                { status: 'cancelado' },
+                { new: true }
+            );
+            if (!agendamento) {
+                throw new Error('Agendamento não encontrado ou não pertence ao paciente!');
+            }
+            return agendamento;
+        } catch (error) {
+            throw new Error('Erro ao cancelar agendamento: ' + error.message);
+        }
+    }
+
+    async reagendarAgendamento(agendamentoId, novaData, novaHora) {
+        try {
+            const agendamento = await AgendamentoModel.findOneAndUpdate(
+                { _id: agendamentoId, pacienteCpf: this._cpf },
+                { status: 'pendente', data: novaData, hora: novaHora },
+                { new: true }
+            );
+            if (!agendamento) {
+                throw new Error('Agendamento não encontrado ou não pertence ao paciente!');
+            }
+            return agendamento;
+        } catch (error) {
+            throw new Error('Erro ao pedir reagendamento: ' + error.message);
         }
     }
 }

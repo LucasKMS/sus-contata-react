@@ -1,17 +1,23 @@
 const express = require('express');
 const router = express.Router();
-const { createPaciente, getAllPacientes, getPacienteById, getPacienteByCpf, updatePacienteByCpf, deletePacienteByCpf } = require('../controllers/pacienteController');
+const { createPaciente, getAllPacientes, getPacienteById, updatePaciente, deletePaciente, getPacienteByCPF } = require('../controllers/pacienteController');
 
+// Rota para criar um paciente
 router.post('/pacientes', createPaciente);
 
+// Rota para obter todos os pacientes
 router.get('/pacientes', getAllPacientes);
 
-router.get('/pacientes/id/:id', getPacienteById);
+// Rota para obter um paciente por ID
+router.get('/pacientes/:id', getPacienteById);
 
-router.get('/pacientes/cpf/:cpf', getPacienteByCpf);
+// Rota para obter um paciente por CPF
+router.get('/pacientes/cpf/:cpf', getPacienteByCPF);
 
-router.put('/pacientes/:cpf', updatePacienteByCpf);
+// Rota para atualizar um paciente por CPF
+router.put('/pacientes/:cpf', updatePaciente);
 
-router.delete('/pacientes/:cpf', deletePacienteByCpf);
+// Rota para deletar um paciente por CPF
+router.delete('/pacientes/:cpf', deletePaciente);
 
 module.exports = router;
