@@ -21,7 +21,7 @@ O **SUS Contata** foi desenvolvido como uma solução para melhorar a **comunica
 
 > Este projeto utilizou-se de metodologia ágil **SCRUM** a fim de otimizar as entregas, alterações e cooperação dos indivíduos envolvidos.
 
-:pushpin: Status do Projeto: **Em desenvolvimento** :tired_face: :computer: 
+:pushpin: Status do Projeto: **Em desenvolvimento** :computer: 
 ### :crossed_flags: Entregas de Sprints
 Cada entrega realizada será visualizada através de uma **tag** em cada repositório (web e microsserviços), além da criação de uma branch neste repositório com um relatório de tudo o que foi desenvolvido por sprint.
 
