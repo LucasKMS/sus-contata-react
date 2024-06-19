@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import CadastroNovoUsuario from '../components/CadastroNovoUsuario';
-import CadastroPaciente from './CadastroPacientes';
+import CadastroAgendamento from '../components/CadastroAgendamento';
+import CadastroPaciente from './CadastroPaciente';
 
 function Cadastro() {
   const [activeComponent, setActiveComponent] = useState(null);
 
   const renderComponent = () => {
     switch (activeComponent) {
-      case 'CadastroNovoUsuario':
-        return <CadastroNovoUsuario />;
-        case 'CadastroPaciente':
+      case 'CadastroPaciente':
         return <CadastroPaciente />;
+        case 'CadastroAgendamento':
+        return <CadastroAgendamento />;
       default:
         return null;
     }
@@ -25,7 +25,7 @@ function Cadastro() {
             <Button
                 variant="primary"
                 className="mb-2"
-                onClick={() => setActiveComponent('CadastroNovoUsuario')}
+                onClick={() => setActiveComponent('CadastroPaciente')}
                 >
                 Cadastrar Novo Paciente
             </Button>
@@ -33,7 +33,7 @@ function Cadastro() {
             <Button
                 variant="success"
                 className="mb-2"
-                onClick={() => setActiveComponent('CadastroPaciente')}
+                onClick={() => setActiveComponent('CadastroAgendamento')}
                 >
                 Cadastrar Novo Agendamento
             </Button>
