@@ -2,36 +2,6 @@ import React, { useState } from 'react';
 import { Form, Button, Col, Row, Container } from 'react-bootstrap';
 import axios from 'axios';
 
-const PacienteSchema = new Schema({
-  cpf: { type: String, required: true, unique: true },
-  nomeCompleto: { type: String, required: true },
-  dataNascimento: { type: Date, required: true },
-  endereco: { type: EnderecoSchema, required: true },
-  email: { type: String },
-  telefones: { type: TelefoneSchema, _id: false },
-  contatosAdicionais: {
-      contato1: { type: ContatoAdicionalSchema, _id: false },
-      contato2: { type: ContatoAdicionalSchema, _id: false }
-  },
-  encaixe: { type: Boolean },
-  tipoUsuario: {
-      type: String,
-      enum: ['adm', 'paciente', 'medico'],
-      required: true,
-      default: 'paciente'
-  }
-}, { timestamps: true })
-
-const [cpf, setCpf] = useState('')
-const [nomeCompleto, setNomeCompleto] = useState('')
-const [dataNascimento, setDataNascimento] = useState()
-
-
-async function handleSubmit(event) {
-  event.preventDefault();
-
-}
-
 const CadastroPaciente = () => {
   return (
     <Container className="d-flex flex-column align-items-center">
