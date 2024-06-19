@@ -14,7 +14,72 @@ class Paciente {
         this._tipoUsuario = tipoUsuario;  // Adicionado o campo tipoUsuario
     }
 
-    
+    // Getters e Setters
+
+    getCpf() {
+        return this._cpf
+    }
+
+    setCpf(value) {
+        this._cpf = value
+    }
+
+    getDataNascimento() {
+        return this._dataNascimento
+    }
+
+    setDataNascimento(value) {
+        this._dataNascimento = value
+    }
+
+    getEndereco() {
+        return this._endereco
+    }
+
+    setEndereco(value) {
+        this._endereco = value
+    }
+
+    getEmail() {
+        return this._email
+    }
+
+    setEmail(value) {
+        this._email = value
+    }
+
+    getTelefones() {
+        return this._telefones
+    }
+
+    setTelefones(value) {
+        this._telefones = value
+    }
+
+    getContatosAdicionais() {
+        return this._contatosAdicionais
+    }
+
+    setContatosAdicionais(value) {
+        this._contatosAdicionais = value
+    }
+
+    getEncaixe() {
+        return this.encaixe
+    }
+
+    setEncaixe(value) {
+        this._encaixe = value
+    }
+
+    getTipoUsuario() {
+        return this._tipoUsuario
+    }
+
+    setTipoUsuario(value) {
+        this._tipoUsuario = value
+    }
+
 
     // Método para salvar o paciente no banco de dados
     async save() {
@@ -33,6 +98,7 @@ class Paciente {
         return paciente; // Retorna o paciente salvo
     }
 
+    // Método para obter todos os pacientes
     static async getAll() {
         try {
             const pacientes = await PacienteModel.find();
@@ -43,7 +109,7 @@ class Paciente {
     }
 
     async update(updates) {
-        const allowedUpdates = ['nomeCompleto', 'dataNascimento', 'endereco', 'email', 'telefones', 'contatosAdicionais', 'encaixe'];
+        const allowedUpdates = ['nomeCompleto', 'dataNascimento', 'email', 'telefones', 'contatosAdicionais', 'encaixe'];
         const filteredUpdates = Object.keys(updates).reduce((acc, key) => {
             if (allowedUpdates.includes(key)) {
                 acc[key] = updates[key];
@@ -145,4 +211,4 @@ class Paciente {
     }
 }
 
-module.exports = Paciente;
+module.exports = { Paciente };
