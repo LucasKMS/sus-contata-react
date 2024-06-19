@@ -7,7 +7,7 @@
         }
     ],
     "functions": {
-        "api/index.js": {
+        "api/server.js": {
             "includeFiles": "api/swagger/swagger_output.json"
         }
     }
