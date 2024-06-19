@@ -1,6 +1,16 @@
 const { AgendamentoModel } = require("../models/agendamentoModel");
 
 class Agendamento {
+    constructor(data) {
+        this.nomeUnidade = data.nomeUnidade;
+        this.data = data.data;
+        this.hora = data.hora;
+        this.pacienteCpf = data.pacienteCpf;
+        this.especialidade = data.especialidade;
+        this.tipoAtendimento = data.tipoAtendimento;
+        this.status = data.status || 'pendente'; // Define um status padrão
+    }
+    
     async criarAgendamento(pacienteCpf, data, hora) {
         throw new Error('Método não implementado');
     }
@@ -22,7 +32,7 @@ class Agendamento {
             nomeUnidade: this.nomeUnidade,
             data: this.data,
             hora: this.hora,
-            pacienteCpf: this.cpf,
+            pacienteCpf: this.pacienteCpf,
             especialidade: this.especialidade,
             tipoAtendimento: this.tipoAtendimento,
             status: this.status
