@@ -7,11 +7,14 @@ const pacienteRoutes = require("./routes/pacienteRoutes");
 const agendamentoRoutes = require("./routes/agendamentoRoutes");
 const unidadeRoutes = require("./routes/unidadeRoutes");
 const administrativoRoutes = require("./routes/administrativoRoutes");
+const cors = require("cors")
 
 config();
 
 // Criando uma instância do servidor Express
 const app = express();
+
+app.use(cors());
 
 // Middleware para analisar JSON
 app.use(express.json());
