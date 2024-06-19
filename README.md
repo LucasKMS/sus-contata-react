@@ -27,7 +27,7 @@ Cada entrega realizada será visualizada através de uma **tag** em cada reposit
 
 ## :factory: Backlogs & User Stories
     
-> Em desenvolvimento
+> [Link do Jira](https://sus-contata.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline)
 
 → [Voltar ao topo](#topo)
 
@@ -38,7 +38,7 @@ Para idealização do layout foram desenvolvidos protótipos de baixo e alto ní
 
 [Acesse o protótipo de baixo nível](./sus-contata-wireframe)
 
-[Acesse o protótipo de alto nível](./sus-contata-figma)
+[Acesse o protótipo de alto nível](https://www.figma.com/design/OJpx48Ej5HeACA6LbG3jy8/SUS-Contata?node-id=0-1)
 
 <span id="documentacao">
 
