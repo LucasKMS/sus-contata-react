@@ -109,7 +109,7 @@ const createAgendamento = async (req, res) => {
 // Função para obter todos os agendamentos
 const getAgendamentos = async (req, res) => {
     try {
-        const agendamentos = await Agendamento.getAll();
+        const agendamentos = await Agendamento.consultarAgendamentos();
         res.status(200).json(agendamentos);
     } catch (error) {
         res.status(500).json({ message: 'Erro ao obter a listagem dos agendamentos', error: error.message });

@@ -109,7 +109,7 @@ class Paciente {
     }
 
     async update(updates) {
-        const allowedUpdates = ['nomeCompleto', 'dataNascimento', 'email', 'telefones', 'contatosAdicionais', 'encaixe'];
+        const allowedUpdates = ['email', 'telefones', 'contatosAdicionais', 'encaixe'];
         const filteredUpdates = Object.keys(updates).reduce((acc, key) => {
             if (allowedUpdates.includes(key)) {
                 acc[key] = updates[key];

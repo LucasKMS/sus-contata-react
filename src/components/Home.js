@@ -216,7 +216,7 @@ function Home() {
           </div>
 
           <div id="botao" className={styles.botao}>
-            <button id="conecte-sus" onClick={handleClick}>Conecte SUS</button>
+            <button id="conecte-sus" className="btn btn-primary p-2 w-25" onClick={handleClick}>Login</button>
           </div>
 
           <div className={styles.select_box}>

@@ -160,29 +160,29 @@ class Administrativo extends Agendamento {
     }
 
     // Métodos de agendamento
-    async criarAgendamento(pacienteCpf, data, hora) {
-        try {
-            const agendamento = new AgendamentoModel({
-                pacienteCpf,
-                data,
-                hora,
-                status: 'pendente'
-            });
-            await agendamento.save();
-            return agendamento;
-        } catch (error) {
-            throw new Error('Erro ao criar agendamento: ' + error.message);
-        }
-    }
+    // async criarAgendamento(pacienteCpf, data, hora) {
+    //     try {
+    //         const agendamento = new AgendamentoModel({
+    //             pacienteCpf,
+    //             data,
+    //             hora,
+    //             status: 'pendente'
+    //         });
+    //         await agendamento.save();
+    //         return agendamento;
+    //     } catch (error) {
+    //         throw new Error('Erro ao criar agendamento: ' + error.message);
+    //     }
+    // }
 
-    async consultarAgendamentos() {
-        try {
-            const agendamentos = await AgendamentoModel.find();
-            return agendamentos;
-        } catch (error) {
-            throw new Error('Erro ao consultar agendamentos: ' + error.message);
-        }
-    }
+    // async consultarAgendamentos() {
+    //     try {
+    //         const agendamentos = await AgendamentoModel.find();
+    //         return agendamentos;
+    //     } catch (error) {
+    //         throw new Error('Erro ao consultar agendamentos: ' + error.message);
+    //     }
+    // }
 
     async cancelarAgendamento(agendamentoId) {
         try {

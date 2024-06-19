@@ -46,10 +46,11 @@ html {
 }
 
 .botao button {
-    background-color: var(--blue-std);
     padding: 2px;
     width: 150px;
     height: 40px;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px;
     color: var(--white-bg);
     font-weight: bold;
