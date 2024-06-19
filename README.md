@@ -36,8 +36,6 @@ Cada entrega realizada será visualizada através de uma **tag** em cada reposit
 ## :art: Protótipos
 Para idealização do layout foram desenvolvidos protótipos de baixo e alto nível, utilizando-se das ferramentas **Balsamiq** e **Figma** respectivamente.
 
-[Acesse o protótipo de baixo nível](./sus-contata-wireframe)
-
 [Acesse o protótipo de alto nível](https://www.figma.com/design/OJpx48Ej5HeACA6LbG3jy8/SUS-Contata?node-id=0-1)
 
 <span id="documentacao">
@@ -47,8 +45,8 @@ Para idealização do layout foram desenvolvidos protótipos de baixo e alto ní
 > 🔗 **Links gerais** <br>
 > - Documentação do software: [clique aqui para acessar](./Projeto-Interdisciplinar---SUS-Contata.pdf)
 > - Links para os repositórios criados:
->    - **Frontend:** [acessar sus-contata-react](https://github.com/lucasKMS/sus-contata-react)
->    - **Microsserviços (backend):**[acessar microsserviço de cadastro e consulta de unidades de saúde](https://trabalho1-rest-no-sql.vercel.app/)
+>    - **Aplicaçõo Principal:** [acessar sus-contata-react](https://github.com/lucasKMS/sus-contata-react)
+>    - **Microsserviços (backend):** [acessar microsserviço de cadastro e consulta de unidades de saúde](https://trabalho1-rest-no-sql.vercel.app/)
 
 → [Voltar ao topo](#topo)
 
