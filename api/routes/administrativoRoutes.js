@@ -36,7 +36,7 @@ router.delete('/administrativo/:email', deleteAdministrativo);
 // Rota para listar todos os pacientes
 router.get('/adm/pacientes', getAllPacientes)
 
-// Rota para listar todos os pacientes
+// Rota para listar o paciente pelo CPF
 router.get('/adm/pacientes/cpf/:cpf', getPacienteByCpf)
 
 // Rota para criar um agendamento

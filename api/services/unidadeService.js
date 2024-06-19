@@ -1,5 +1,6 @@
 const axios = require('axios');
 
+// Listar todas as unidades
 const fetchUnidades = async () => {
     try {
         const response = await axios.get('https://trabalho1-rest-no-sql.vercel.app/api/unidades');

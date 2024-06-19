@@ -2,6 +2,7 @@
 
 const Agendamento = require('../interfaces/Agendamento');
 
+
 // Função para criar um agendamento
 const createAgendamento = async (req, res) => {
     try {
