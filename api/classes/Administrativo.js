@@ -1,7 +1,6 @@
 const { AdministrativoModel } = require('../models/administrativoModel');
 const { AgendamentoModel } = require('../models/agendamentoModel');
 const Agendamento = require('../interfaces/Agendamento');
-const { Paciente } = require('./Paciente')
 
 class Administrativo extends Agendamento {
     constructor({ cpf, nomeCompleto, dataNascimento, endereco, email, telefones, tipoUsuario }) {
@@ -16,55 +15,55 @@ class Administrativo extends Agendamento {
     }
 
     // Getters e Setters
-    getCpf() {
+    get cpf() {
         return this._cpf;
     }
 
-    setCpf(value) {
+    set cpf(value) {
         this._cpf = value;
     }
 
-    getNomeCompleto() {
+    get nomeCompleto() {
         return this._nomeCompleto;
     }
 
-    setNomeCompleto(value) {
+    set nomeCompleto(value) {
         this._nomeCompleto = value;
     }
 
-    getDataNascimento() {
+    get dataNascimento() {
         return this._dataNascimento;
     }
 
-    setDataNascimento(value) {
+    set dataNascimento(value) {
         this._dataNascimento = value;
     }
 
-    getEndereco() {
+    get endereco() {
         return this._endereco;
     }
 
-    setEndereco(value) {
+    set endereco(value) {
         this._endereco = value;
     }
 
-    getEmail() {
+    get email() {
         return this._email;
     }
 
-    setEmail(value) {
+    set email(value) {
         this._email = value;
     }
 
-    getTelefones() {
+    get telefones() {
         return this._telefones;
     }
 
-    setTelefones(value) {
+    set telefones(value) {
         this._telefones = value;
     }
 
-    // Método para salvar o administrativo no bancoDe dados
+    // Método para salvar o administrativo no banco de dados
     async save() {
         const administrativo = new AdministrativoModel({
             cpf: this._cpf,
@@ -86,6 +85,8 @@ class Administrativo extends Agendamento {
             throw new Error('Erro ao buscar todos os funcionários administrativos: ' + error.message);
         }
     }
+
+
 
     async update(updates) {
         const allowedUpdates = ['nomeCompleto', 'dataNascimento', 'endereco', 'email', 'telefones', 'contatosAdicionais', 'encaixe'];
@@ -213,29 +214,6 @@ class Administrativo extends Agendamento {
             return agendamento;
         } catch (error) {
             throw new Error('Erro ao reagendar agendamento: ' + error.message);
-        }
-    }
-
-    static async getAllPacientes() {
-        try {
-            console.log('Chamando Administrativo.getAllPacientes');
-            const pacientes = await Paciente.getAll();
-            console.log('Pacientes retornados por Administrativo.getAllPacientes:', pacientes);
-            return pacientes;
-        } catch (error) {
-            console.error('Erro ao buscar todos os pacientes em Administrativo:', error);
-            throw new Error('Erro ao buscar todos os pacientes: ' + error.message);
-        }
-    }
-
-    static async getPacienteByCpf(cpf) {
-        try {
-            const pacientes = await Paciente.findByCpf(cpf);
-            console.log('Pacientes retornados por Administrativo.getAllPacientes:', pacientes);
-            return pacientes;
-        } catch (error) {
-            console.error('Erro ao buscar todos os pacientes em Administrativo:', error);
-            throw new Error('Erro ao buscar todos os pacientes: ' + error.message);
         }
     }
 }

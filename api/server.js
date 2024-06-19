@@ -4,18 +4,16 @@ const { config } = require("dotenv");
 const express = require('express');
 const mongoose = require('mongoose');
 const pacienteRoutes = require("./routes/pacienteRoutes");
-// const agendamentoRoutes = require("./routes/agendamentoRoutes");
+const agendamentoRoutes = require("./routes/agendamentoRoutes");
 const unidadeRoutes = require("./routes/unidadeRoutes");
 const administrativoRoutes = require("./routes/administrativoRoutes");
-const cors = require('cors');
+const cors = require("cors")
 
 config();
 
 // Criando uma instância do servidor Express
 const app = express();
 
-
-// Configurar CORS
 app.use(cors());
 
 // Middleware para analisar JSON
@@ -36,7 +34,7 @@ mongoose.connection.on('error', (err) => {
 
 // Definindo as rotas
 app.use('/api', pacienteRoutes);
-// app.use('/api', agendamentoRoutes);
+app.use('/api', agendamentoRoutes);
 app.use('/api', unidadeRoutes);
 app.use('/api', administrativoRoutes);
 

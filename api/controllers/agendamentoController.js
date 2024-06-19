@@ -1,6 +1,6 @@
 // controllers/agendamentoController.js
 
-const Agendamento = require('../interfaces/Agendamento');
+const Agendamento = require('../classes/Agendamento');
 
 // Função para criar um agendamento
 const createAgendamento = async (req, res) => {
@@ -69,22 +69,10 @@ const deleteAgendamento = async (req, res) => {
     }
 };
 
-const cancelarAgendamento = async (req, res) => {
-    const { id } = req.params;
-    try {
-        const agendamento = new Agendamento({ id });
-        const agendamentoCancelado = await agendamento.cancelarAgendamento();
-        res.status(200).json(agendamentoCancelado);
-    } catch (error) {
-        res.status(500).json({ message: 'Erro ao cancelar o agendamento', error: error.message });
-    }
-};
-
 module.exports = {
     createAgendamento,
     getAgendamentos,
     getAgendamentoById,
     updateAgendamento,
-    deleteAgendamento,
-    cancelarAgendamento
+    deleteAgendamento
 };

@@ -1,4 +1,4 @@
-const { Paciente } = require('../classes/Paciente');
+const Paciente = require('../classes/Paciente');
 
 // Função para criar um paciente
 const createPaciente = async (req, res) => {
@@ -11,18 +11,13 @@ const createPaciente = async (req, res) => {
     }
 };
 
-// Função para consultar agendamentos de um paciente específico
-const consultarAgendamentos = async (req, res) => {
-    const { cpf } = req.params;
+// Função para obter todos os pacientes
+const getAllPacientes = async (req, res) => {
     try {
-        const paciente = await Paciente.findByCpf(cpf);
-        if (!paciente) {
-            return res.status(404).json({ message: 'Paciente não encontrado' });
-        }
-        const agendamentos = await paciente.consultarAgendamentos();
-        res.status(200).json(agendamentos);
+        const pacientes = await Paciente.getAll();
+        res.status(200).json(pacientes);
     } catch (error) {
-        res.status(500).json({ message: 'Erro ao consultar agendamentos', error: error.message });
+        res.status(500).json({ message: 'Erro ao obter a listagem dos pacientes', error: error.message });
     }
 };
 
@@ -54,7 +49,7 @@ const getPacienteByCPF = async (req, res) => {
     }
 };
 
-// Função para atualizar um paciente por CPF
+// Função para atualizar um paciente por ID
 const updatePaciente = async (req, res) => {
     const { cpf } = req.params;
     try {
@@ -70,29 +65,27 @@ const updatePaciente = async (req, res) => {
     }
 };
 
-const cancelarAgendamento = async (req, res) => {
-    const { id } = req.params;
-    const { cpf } = req.body; // Supondo que o CPF do paciente vem no corpo da requisição
-
+// Função para deletar um paciente por ID
+const deletePaciente = async (req, res) => {
+    const { cpf } = req.params;
     try {
         const paciente = await Paciente.findByCpf(cpf);
         if (!paciente) {
-            return res.status(404).json({ message: 'Paciente não encontrado' });
+            return res.status(404).json({ message: 'Paciente não encontrado para exclusão' });
         }
 
-        const agendamentoCancelado = await paciente.cancelarAgendamento(id);
-        res.status(200).json(agendamentoCancelado);
+        await paciente.delete();
+        res.status(200).json({ message: 'Paciente excluído com sucesso' });
     } catch (error) {
-        res.status(500).json({ message: 'Erro ao cancelar o agendamento', error: error.message });
+        res.status(500).json({ message: 'Erro ao excluir o paciente', error: error.message });
     }
 };
 
-
 module.exports = {
     createPaciente,
-    consultarAgendamentos,
+    getAllPacientes,
     getPacienteById,
     updatePaciente,
-    getPacienteByCPF,
-    cancelarAgendamento
+    deletePaciente,
+    getPacienteByCPF
 };
