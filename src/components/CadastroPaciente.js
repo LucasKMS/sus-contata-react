@@ -81,7 +81,30 @@ function CadastroPaciente() {
 
       console.log('Resposta:', response.data);
 
-    } catch (error) {
+      setNomeCompleto('');
+      setDataNascimento(''); 
+      setCep('');
+      setLogradouro('');
+      setNumero('');
+      setBairro(''); 
+      setComplemento(''); 
+      setCidade(''); 
+      setUf(''); 
+      setEmail(''); 
+      setTelefone1(''); 
+      setTelefone2(''); 
+      setGrauParentescoContato1(''); 
+      setNomeCompletoContato1(''); 
+      setEmailContato1(''); 
+      setTelefone1Contato1(''); 
+      setTelefone2Contato1(''); 
+      setGrauParentescoContato2(''); 
+      setNomeCompletoContato2(''); 
+      setEmailContato2(''); 
+      setTelefone1Contato2(''); 
+      setTelefone2Contato2('');
+    } 
+    catch (error) {
       console.error('Erro:', error);
     }
   }
