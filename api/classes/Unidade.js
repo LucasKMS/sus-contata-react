@@ -9,43 +9,43 @@ class Unidade {
     }
 
     // Getters e Setters
-    get nomeUnidade() {
+    getNomeUnidade() {
         return this._nomeUnidade;
     }
 
-    set nomeUnidade(value) {
+    setNomeUnidade(value) {
         this._nomeUnidade = value;
     }
 
-    get cep() {
+    getCep() {
         return this._cep;
     }
 
-    set cep(value) {
+    setCep(value) {
         this._cep = value;
     }
 
-    get endereco() {
+    getEndereco() {
         return this._endereco;
     }
 
-    set endereco(value) {
+    setEndereco(value) {
         this._endereco = value;
     }
 
-    get dataCadastro() {
+    getDataCadastro() {
         return this._dataCadastro;
     }
 
-    set dataCadastro(value) {
+    setDataCadastro(value) {
         this._dataCadastro = value;
     }
 
-    get localizacao() {
+    getLocalizacao() {
         return this._localizacao;
     }
 
-    set localizacao(value) {
+    setLocalizacao(value) {
         this._localizacao = value;
     }
 
